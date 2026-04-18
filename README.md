@@ -26,9 +26,9 @@ Submitted to the **Snapchat Spectacles Open Source Challenge**.
 
 Quoridor is a two-player abstract strategy board game designed by Mirko Marchesi, first published in 1997. The board is a 9×9 grid. Each player starts on opposite sides and races to reach the far end. On each turn a player either **moves their pawn** one square in any orthogonal direction, or **places a wall** segment to block the opponent's path. Walls are two cells wide and can be placed horizontally or vertically, as long as they do not completely cut off either player's path to their goal.
 
-The game is deceptively deep — optimal play requires reading your opponent's intended route, building walls that force long detours, and protecting your own path from being closed off.
+The game is deceptively deep - optimal play requires reading your opponent's intended route, building walls that force long detours, and protecting your own path from being closed off.
 
-This project brings Quoridor into augmented reality on Snapchat Spectacles. The board appears in physical space in front of you. You interact with it using hand tracking — dragging your pawn to move, and dragging wall tiles to place them. An AI opponent plays against you using minimax with alpha-beta pruning and path-based wall generation.
+This project brings Quoridor into augmented reality on Snapchat Spectacles. The board appears in physical space in front of you. You interact with it using hand tracking - dragging your pawn to move, and dragging wall tiles to place them. An AI opponent plays against you using minimax with alpha-beta pruning and path-based wall generation.
 
 ---
 
@@ -36,12 +36,12 @@ This project brings Quoridor into augmented reality on Snapchat Spectacles. The 
 
 **Gameplay**
 - Full Quoridor ruleset on a 9×9 board with 10 walls per player
-- Legal wall validation via BFS — walls can never fully cut off a player's path
+- Legal wall validation via BFS - walls can never fully cut off a player's path
 - Pawn jump-over logic including diagonal sidestep when a straight jump is blocked by a wall or the board edge
 - Full game reset and replay without restarting the lens
 
 **Interaction**
-- Hand tracking via SpectaclesInteractionKit — drag pawn to move, drag wall tiles to place
+- Hand tracking via SpectaclesInteractionKit - drag pawn to move, drag wall tiles to place
 - Pinch to rotate wall orientation between horizontal and vertical
 - Confirm, rotate and cancel panel for wall placement
 - Ghost wall preview during dragging
@@ -49,15 +49,15 @@ This project brings Quoridor into augmented reality on Snapchat Spectacles. The 
 
 **AI Opponent**
 - Minimax with alpha-beta pruning at depth 2
-- Path-aware wall placement — offensive walls target your BFS shortest path, defensive walls protect the AI's own path
-- Early game suppression — no walls placed when distances are large and equal
+- Path-aware wall placement - offensive walls target your BFS shortest path, defensive walls protect the AI's own path
+- Early game suppression - no walls placed when distances are large and equal
 - Sprint mode when close to winning
 
 **Animations**
 - Board pop-in on lens start
 - Player pawn hop with squash and stretch on each move
 - AI pawn idle breathing between turns
-- AI pawn 5-phase hop — anticipation squash, rise with stretch, fall, land squash, settle
+- AI pawn 5-phase hop - anticipation squash, rise with stretch, fall, land squash, settle
 - Player win: 3-hop victory dance, crown pop-in that rides the pawn, confetti VFX burst
 - AI win: two trombones pop in and orbit the player pawn with sine wave bob, physics-based tears stream from the player pawn
 - Pulsing rim glow on player pawn during their turn
@@ -73,7 +73,7 @@ This project brings Quoridor into augmented reality on Snapchat Spectacles. The 
 
 The aesthetic is **marble and stone**. The board surface is green marble. The player pawn is blue marble, the AI pawn is red marble. Wall segments are colored marble slabs. The crown is a gold prop that pops onto the player pawn on a win.
 
-All 3D models — pawns, walls, crown and trombones — were modelled in **Blender** and main assets were textured in **Substance Painter**. Confetti is a VFX component built in the Lens Studio VFX Graph Editor. The UI font is **Bebas Neue**.
+All 3D models - pawns, walls, crown and trombones - were modelled in **Blender** and main assets were textured in **Substance Painter**. Confetti is a VFX component built in the Lens Studio VFX Graph Editor. The UI font is **Bebas Neue**.
 
 ---
 
@@ -81,14 +81,14 @@ All 3D models — pawns, walls, crown and trombones — were modelled in **Blend
 
 | Script | Purpose |
 |---|---|
-| `BoardState.ts` | Pure game logic — board state, move validation, wall application, clone for simulation |
-| `WallValidator.ts` | BFS utilities — path checking, distance, shortest path, wall legality |
+| `BoardState.ts` | Pure game logic - board state, move validation, wall application, clone for simulation |
+| `WallValidator.ts` | BFS utilities - path checking, distance, shortest path, wall legality |
 | `AIController.ts` | Minimax AI with alpha-beta pruning, path-based wall generation, connectivity bonus |
-| `GameController.ts` | Main orchestrator — SIK bindings, turn flow, input handling, win detection, reset |
+| `GameController.ts` | Main orchestrator - SIK bindings, turn flow, input handling, win detection, reset |
 | `BoardSpawnAnimation.ts` | Board and wall pop-in animations, `onBoardReady` callback |
 | `PawnAnimator.ts` | AI pawn idle breathing and hop animation |
-| `WinCelebration.ts` | Player win — victory dance, crown pop-in, confetti VFX |
-| `TromboneCelebration.ts` | AI win — trombone orbit animation |
+| `WinCelebration.ts` | Player win - victory dance, crown pop-in, confetti VFX |
+| `TromboneCelebration.ts` | AI win - trombone orbit animation |
 | `TearEffect.ts` | Physics-based tear particle system using a pre-pooled object set |
 | `AudioManager.ts` | Centralized audio with randomized sound pools |
 | `AIThinkingIndicator.ts` | Animated dot ring that tracks the AI pawn during computation |
@@ -99,15 +99,15 @@ All 3D models — pawns, walls, crown and trombones — were modelled in **Blend
 
 ### Key implementation notes
 
-**`BoardState.ts`** — completely decoupled from rendering. Holds `playerPos`, `aiPos`, `hWalls[8][8]`, `vWalls[8][8]`, `playerWallsLeft` and `aiWallsLeft`. `getValidMoves()` handles straight jumps and diagonal sidesteps when a straight jump is blocked. `clone()` deep copies the entire state for minimax simulation without touching the real game.
+**`BoardState.ts`** - completely decoupled from rendering. Holds `playerPos`, `aiPos`, `hWalls[8][8]`, `vWalls[8][8]`, `playerWallsLeft` and `aiWallsLeft`. `getValidMoves()` handles straight jumps and diagonal sidesteps when a straight jump is blocked. `clone()` deep copies the entire state for minimax simulation without touching the real game.
 
-**`WallValidator.ts`** — all methods are static. `isWallLegal()` checks bounds, overlap with adjacent same-axis walls, crossing perpendicular walls at the same intersection, then runs BFS on a cloned board to confirm neither player is fully cut off. `getShortestPath()` returns the full ordered cell list of the shortest path, used by the AI to generate precise candidate walls rather than guessing by proximity.
+**`WallValidator.ts`** - all methods are static. `isWallLegal()` checks bounds, overlap with adjacent same-axis walls, crossing perpendicular walls at the same intersection, then runs BFS on a cloned board to confirm neither player is fully cut off. `getShortestPath()` returns the full ordered cell list of the shortest path, used by the AI to generate precise candidate walls rather than guessing by proximity.
 
-**`WinCelebration.ts`** — confetti calls `VFXComponent.restart()` directly on win. `clear()` is never called in reset — it leaves the VFX in a state that `restart()` cannot recover from, breaking confetti on subsequent wins. The crown pops in at the `CrownEmpty` world position then reparents to the player pawn with world position, rotation and scale explicitly restored after reparenting to prevent transform inheritance issues.
+**`WinCelebration.ts`** - confetti calls `VFXComponent.restart()` directly on win. `clear()` is never called in reset - it leaves the VFX in a state that `restart()` cannot recover from, breaking confetti on subsequent wins. The crown pops in at the `CrownEmpty` world position then reparents to the player pawn with world position, rotation and scale explicitly restored after reparenting to prevent transform inheritance issues.
 
-**`TearEffect.ts`** — 40 `SceneObject` instances are created and pooled in `onAwake` with no runtime instantiation during gameplay. Each tear has gravity and air resistance applied per frame and is returned to the pool when it falls below a configurable Y despawn threshold relative to the pawn.
+**`TearEffect.ts`** - 40 `SceneObject` instances are created and pooled in `onAwake` with no runtime instantiation during gameplay. Each tear has gravity and air resistance applied per frame and is returned to the pool when it falls below a configurable Y despawn threshold relative to the pawn.
 
-**`AIThinkingIndicator.ts`** — Back.Out easing is implemented manually in the update loop using the standard cubic formula. The indicator's XZ world position tracks the AI pawn every frame so it follows the pawn correctly during its jump animation.
+**`AIThinkingIndicator.ts`** - Back.Out easing is implemented manually in the update loop using the standard cubic formula. The indicator's XZ world position tracks the AI pawn every frame so it follows the pawn correctly during its jump animation.
 
 ---
 
@@ -156,7 +156,7 @@ When `aiDist <= 1`, or `aiDist <= 3` and the AI leads by more than 1 move, minim
 | TypeScript | All scripting and game logic |
 | SpectaclesInteractionKit (SIK) v0.16.4 | Hand tracking and interactables |
 | LSTween | Tween animation library |
-| [Blender](https://www.blender.org/) | 3D modelling — pawns, walls, crown, trombones |
+| [Blender](https://www.blender.org/) | 3D modelling - pawns, walls, crown, trombones |
 | [Substance Painter](https://www.adobe.com/products/substance3d-painter.html) | PBR texture painting |
 | Bebas Neue | UI font |
 
@@ -173,7 +173,7 @@ When `aiDist <= 1`, or `aiDist <= 3` and the AI leads by more than 1 move, minim
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
