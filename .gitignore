@@ -5,6 +5,7 @@ LensStudio/Quoridor/Workspaces/
 
 # Substance Painter autosaves
 SourceAssets/SubstancePainter/autosave/
+SourceAssets/SubstancePainter/*_autosave_*.spp
 
 # OS junk
 .DS_Store
