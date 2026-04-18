@@ -1,0 +1,62 @@
+- !<AssetImportMetadata/e0c92b9b-06d0-466a-b176-05c4c37df2dd>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> c2e2bde3-2bcb-44ab-b24c-f5c9f3c85c48
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> c2e2bde3-2bcb-44ab-b24c-f5c9f3c85c48
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 38f6a40e-a0b6-4d76-8257-1bbc0900f024
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/38f6a40e-a0b6-4d76-8257-1bbc0900f024>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: d46576b0-a778-45ca-b021-2e3416f1b2ad
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    aiPawn: false
+    dotsRoot: false
+    popDurationMs: false
+    pulseMax: false
+    pulseMin: false
+    pulseSpeed: false
+    thinkingIndicatorParent: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - thinkingIndicatorParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      dotsRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiPawn: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      popDurationMs: !<float> 400.000000
+      pulseMin: 0.500000
+      pulseMax: 1.400000
+      pulseSpeed: 1.500000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject thinkingIndicatorParent
+    - // @input SceneObject dotsRoot
+    - // @input SceneObject aiPawn
+    - // @input float popDurationMs = 400
+    - // @input float pulseMin = 0.5
+    - // @input float pulseMax = 1.4
+    - // @input float pulseSpeed = 0.8

@@ -1,0 +1,56 @@
+- !<AssetImportMetadata/9bdde444-7d21-4b3a-936b-76e421d8e59a>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 6f7021bc-6e26-4168-b74f-7bcee0587236
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 6f7021bc-6e26-4168-b74f-7bcee0587236
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 6908072c-49ff-4406-aaee-05cf85a91c24
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/6908072c-49ff-4406-aaee-05cf85a91c24>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 10dc5cb5-4438-44d5-a24a-2412a40d9197
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    glowMaterial: false
+    playerPawnGlow: false
+    pulseMax: false
+    pulseMin: false
+    pulseSpeed: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - playerPawnGlow: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      glowMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      pulseMin: 0.300000
+      pulseMax: !<float> 1.000000
+      pulseSpeed: 1.500000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject playerPawnGlow
+    - // @input Asset.Material glowMaterial
+    - // @input float pulseMin = 0.3
+    - // @input float pulseMax = 1
+    - // @input float pulseSpeed = 0.35

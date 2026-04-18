@@ -1,0 +1,62 @@
+- !<AssetImportMetadata/2ff3977c-79e2-4743-a377-02885246887c>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> c53e02b0-f75c-4fea-bb93-7b21a6f7be1b
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> c53e02b0-f75c-4fea-bb93-7b21a6f7be1b
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> d1c5c1e7-5f76-4547-ab4c-ce3324f32d4d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/d1c5c1e7-5f76-4547-ab4c-ce3324f32d4d>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: d6d0e700-5500-49c3-8263-5859e0162d27
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cancelButton: false
+    confirmButton: false
+    confirmPanel: false
+    popInDurationMs: false
+    popOutDurationMs: false
+    rotateButton: false
+    staggerDelayMs: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - confirmPanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rotateButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cancelButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      popInDurationMs: !<float> 400.000000
+      popOutDurationMs: !<float> 300.000000
+      staggerDelayMs: !<float> 80.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject confirmPanel
+    - // @input SceneObject confirmButton
+    - // @input SceneObject rotateButton
+    - // @input SceneObject cancelButton
+    - // @input float popInDurationMs = 400
+    - // @input float popOutDurationMs = 300
+    - // @input float staggerDelayMs = 80

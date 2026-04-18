@@ -1,0 +1,59 @@
+- !<AssetImportMetadata/d22b3264-0802-4a1a-a565-60a41e7934eb>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 92bc27e4-4dfb-4053-9126-7cc6efb87274
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 92bc27e4-4dfb-4053-9126-7cc6efb87274
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 83fd05ae-1fd5-44bf-8272-d62532573528
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/83fd05ae-1fd5-44bf-8272-d62532573528>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: a2fbf76b-3607-468a-90eb-37498f690f3a
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    handHint: false
+    handHintDelayMs: false
+    popInDurationMs: false
+    popOutDurationMs: false
+    restartButton: false
+    spinDegrees: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - restartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      handHint: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      popInDurationMs: !<float> 500.000000
+      popOutDurationMs: !<float> 300.000000
+      spinDegrees: !<float> 180.000000
+      handHintDelayMs: !<float> 800.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject restartButton
+    - // @input SceneObject handHint
+    - // @input float popInDurationMs = 500
+    - // @input float popOutDurationMs = 300
+    - // @input float spinDegrees = 180
+    - // @input float handHintDelayMs = 800

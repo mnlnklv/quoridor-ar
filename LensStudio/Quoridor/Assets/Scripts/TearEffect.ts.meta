@@ -1,0 +1,86 @@
+- !<AssetImportMetadata/87950b45-00f7-4c75-a893-9140c0f4b3a9>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 57672661-28fc-4916-a6d8-f673090d63dc
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 57672661-28fc-4916-a6d8-f673090d63dc
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> d178fce7-ba5a-4343-bb07-7e411d4db0c0
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/d178fce7-ba5a-4343-bb07-7e411d4db0c0>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 0b1df0f1-ccce-46b1-9604-fe4e2e823252
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    airResistance: false
+    despawnY: false
+    facingAxisIndex: false
+    gravity: false
+    headHeightOffset: false
+    maxUpSpeed: false
+    minUpSpeed: false
+    playerPawn: false
+    shootSpread: false
+    spawnIntervalSeconds: false
+    spreadAngleDegrees: false
+    streamDurationSeconds: false
+    tearCount: false
+    tearParent: false
+    tearTemplate: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - playerPawn: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      tearTemplate: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      tearParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      tearCount: !<float> 20.000000
+      streamDurationSeconds: !<float> 2.000000
+      spawnIntervalSeconds: 0.100000
+      shootSpread: !<float> 3.000000
+      minUpSpeed: !<float> 5.000000
+      maxUpSpeed: !<float> 8.000000
+      gravity: !<float> -15.000000
+      airResistance: 0.980000
+      despawnY: !<float> -10.000000
+      headHeightOffset: !<float> 3.000000
+      facingAxisIndex: !<float> 0.000000
+      spreadAngleDegrees: !<float> 30.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject playerPawn
+    - // @input SceneObject tearTemplate
+    - // @input SceneObject tearParent
+    - // @input float tearCount = 40
+    - // @input float streamDurationSeconds = 4
+    - // @input float spawnIntervalSeconds = 0.1
+    - // @input float shootSpread = 8
+    - // @input float minUpSpeed = 1
+    - // @input float maxUpSpeed = 2.5
+    - // @input float gravity = -20
+    - // @input float airResistance = 0.97
+    - // @input float despawnY = -20
+    - // @input float headHeightOffset = 3
+    - // @input float facingAxisIndex
+    - // @input float spreadAngleDegrees = 30

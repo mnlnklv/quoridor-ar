@@ -1,0 +1,182 @@
+- !<AssetImportMetadata/ce59edba-2361-44a8-98d7-1f37cd6ca975>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> aa4d4ad7-8f7f-4cac-8d96-3a42cee92016
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> aa4d4ad7-8f7f-4cac-8d96-3a42cee92016
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 96067744-a9c4-4d02-b498-73bf8b862318
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/96067744-a9c4-4d02-b498-73bf8b862318>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 27803cac-faed-4188-b688-a78f5437f842
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    aiPawn: false
+    aiThinkingIndicator: false
+    aiWall0: false
+    aiWall1: false
+    aiWall2: false
+    aiWall3: false
+    aiWall4: false
+    aiWall5: false
+    aiWall6: false
+    aiWall7: false
+    aiWall8: false
+    aiWall9: false
+    audioManager: false
+    boardSpawnAnimation: false
+    cancelButton: false
+    confirmButton: false
+    confirmPanel: false
+    confirmPanelAnimator: false
+    debugTriggerLoss: false
+    debugTriggerWin: false
+    errorFlash: false
+    gridParent: false
+    pawnAnimator: false
+    pawnGhost: false
+    playerPawn: false
+    resetButton: false
+    restartButton: false
+    restartButtonAnimator: false
+    restartButtonDelay: false
+    rotateButton: false
+    snapThreshold: false
+    tearEffect: false
+    tromboneCelebration: false
+    turnIndicator: false
+    wall0: false
+    wall1: false
+    wall2: false
+    wall3: false
+    wall4: false
+    wall5: false
+    wall6: false
+    wall7: false
+    wall8: false
+    wall9: false
+    wallGhost: false
+    wallSlotParent: false
+    winCelebration: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - playerPawn: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiPawn: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pawnAnimator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      winCelebration: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      tromboneCelebration: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      audioManager: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      turnIndicator: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
+      errorFlash: !<MappingBased.AssignableType_5> 00000000-0000-0000-0000-000000000000
+      aiThinkingIndicator: !<MappingBased.AssignableType_6> 00000000-0000-0000-0000-000000000000
+      wallGhost: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pawnGhost: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      restartButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      resetButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      restartButtonAnimator: !<MappingBased.AssignableType_7> 00000000-0000-0000-0000-000000000000
+      confirmPanelAnimator: !<MappingBased.AssignableType_8> 00000000-0000-0000-0000-000000000000
+      tearEffect: !<MappingBased.AssignableType_9> 00000000-0000-0000-0000-000000000000
+      gridParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wallSlotParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall0: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall3: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall4: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall5: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall6: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall7: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall8: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      wall9: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall0: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall3: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall4: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall5: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall6: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall7: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall8: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      aiWall9: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmPanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confirmButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rotateButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cancelButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      boardSpawnAnimation: !<MappingBased.AssignableType_10> 00000000-0000-0000-0000-000000000000
+      snapThreshold: !<float> 5.000000
+      debugTriggerWin: false
+      debugTriggerLoss: false
+      restartButtonDelay: 3.500000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject playerPawn
+    - // @input SceneObject aiPawn
+    - // @input AssignableType pawnAnimator
+    - // @input AssignableType_1 winCelebration
+    - // @input AssignableType_2 tromboneCelebration
+    - // @input AssignableType_3 audioManager
+    - // @input AssignableType_4 turnIndicator
+    - // @input AssignableType_5 errorFlash
+    - // @input AssignableType_6 aiThinkingIndicator
+    - // @input SceneObject wallGhost
+    - // @input SceneObject pawnGhost
+    - // @input SceneObject restartButton
+    - // @input SceneObject resetButton
+    - // @input AssignableType_7 restartButtonAnimator
+    - // @input AssignableType_8 confirmPanelAnimator
+    - // @input AssignableType_9 tearEffect
+    - // @input SceneObject gridParent
+    - // @input SceneObject wallSlotParent
+    - // @input SceneObject wall0
+    - // @input SceneObject wall1
+    - // @input SceneObject wall2
+    - // @input SceneObject wall3
+    - // @input SceneObject wall4
+    - // @input SceneObject wall5
+    - // @input SceneObject wall6
+    - // @input SceneObject wall7
+    - // @input SceneObject wall8
+    - // @input SceneObject wall9
+    - // @input SceneObject aiWall0
+    - // @input SceneObject aiWall1
+    - // @input SceneObject aiWall2
+    - // @input SceneObject aiWall3
+    - // @input SceneObject aiWall4
+    - // @input SceneObject aiWall5
+    - // @input SceneObject aiWall6
+    - // @input SceneObject aiWall7
+    - // @input SceneObject aiWall8
+    - // @input SceneObject aiWall9
+    - // @input SceneObject confirmPanel
+    - // @input SceneObject confirmButton
+    - // @input SceneObject rotateButton
+    - // @input SceneObject cancelButton
+    - // @input AssignableType_10 boardSpawnAnimation
+    - // @input float snapThreshold = 50
+    - // @input bool debugTriggerWin
+    - // @input bool debugTriggerLoss
+    - // @input float restartButtonDelay = 3.5

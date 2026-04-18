@@ -1,0 +1,50 @@
+- !<AssetImportMetadata/8612c22b-7258-4148-845b-fc4348df2d99>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 018ccb26-3f92-47d5-b3e1-57a2a0374c98
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 018ccb26-3f92-47d5-b3e1-57a2a0374c98
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 255c2a04-43e2-4a6c-a943-7b6da22b2532
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/255c2a04-43e2-4a6c-a943-7b6da22b2532>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 805f4e1d-e423-432e-af6d-4a6a9fc952d4
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    aiPawn: false
+    audioManager: false
+    jumpHeight: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - aiPawn: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      jumpHeight: !<float> 5.000000
+      audioManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject aiPawn
+    - // @input float jumpHeight = 5
+    - // @input AssignableType audioManager

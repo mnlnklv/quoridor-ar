@@ -1,0 +1,65 @@
+- !<AssetImportMetadata/308b95d6-aace-4b2e-a5c4-d5cf7b9f1f2b>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 196a88cd-e521-4337-bb75-285f65097c45
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 196a88cd-e521-4337-bb75-285f65097c45
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 5f3819b5-a6a3-41d0-b43c-f1346826470a
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/5f3819b5-a6a3-41d0-b43c-f1346826470a>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: e89bf404-a0ed-453f-99a6-58dd28b37a91
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    bobAmount: false
+    bobSpeed: false
+    orbitPivot: false
+    orbitRadius: false
+    orbitSpeed: false
+    popDurationMs: false
+    tromboneLeft: false
+    tromboneRight: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - tromboneLeft: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      tromboneRight: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      orbitPivot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      orbitSpeed: !<float> 90.000000
+      orbitRadius: !<float> 5.000000
+      bobSpeed: !<float> 2.000000
+      bobAmount: 1.500000
+      popDurationMs: !<float> 500.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject tromboneLeft
+    - // @input SceneObject tromboneRight
+    - // @input SceneObject orbitPivot
+    - // @input float orbitSpeed = 90
+    - // @input float orbitRadius = 5
+    - // @input float bobSpeed = 2
+    - // @input float bobAmount = 1.5
+    - // @input float popDurationMs = 500

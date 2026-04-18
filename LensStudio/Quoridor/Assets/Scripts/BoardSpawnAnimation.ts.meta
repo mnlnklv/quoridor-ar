@@ -1,0 +1,47 @@
+- !<AssetImportMetadata/a8cfaff1-c036-40a6-b18b-b20dfd0de09d>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 41ad57c5-cc81-4171-ade7-ae9c41eecb0e
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 41ad57c5-cc81-4171-ade7-ae9c41eecb0e
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 26fa005d-6301-4766-8eb1-4c9bb67e5460
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/26fa005d-6301-4766-8eb1-4c9bb67e5460>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: e3e96f59-0cab-48b7-b69b-c60f344b7742
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    audioManager: false
+    boardObject: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - boardObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      audioManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject boardObject
+    - // @input AssignableType audioManager

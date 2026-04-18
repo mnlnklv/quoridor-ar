@@ -1,0 +1,12 @@
+# Lens Studio cache and lock files
+LensStudio/Quoridor/cache/
+LensStudio/Quoridor/*.lock
+LensStudio/Quoridor/Workspaces/
+
+# Substance Painter autosaves
+SourceAssets/SubstancePainter/autosave/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

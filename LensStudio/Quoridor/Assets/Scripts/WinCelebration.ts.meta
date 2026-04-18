@@ -1,0 +1,71 @@
+- !<AssetImportMetadata/4eb8415e-7b98-4ee5-a2c9-7ee9850ff9b2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 6975f993-a728-4622-b65a-59f638a48dd6
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 6975f993-a728-4622-b65a-59f638a48dd6
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 816f569e-821f-4700-bb40-fa4e6f403237
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/816f569e-821f-4700-bb40-fa4e6f403237>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 3a9db6d5-be5d-48d1-ad52-dce98ea1cb43
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    audioManager: false
+    confetti: false
+    crown: false
+    crownEmpty: false
+    hopDurationMs: false
+    hopHeight: false
+    landSquashAmount: false
+    playerPawn: false
+    squashAmount: false
+    stretchAmount: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - playerPawn: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      crown: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      crownEmpty: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      confetti: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      audioManager: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      hopHeight: !<float> 2.000000
+      hopDurationMs: !<float> 300.000000
+      squashAmount: 0.060000
+      stretchAmount: 0.080000
+      landSquashAmount: 0.080000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject playerPawn
+    - // @input SceneObject crown
+    - // @input SceneObject crownEmpty
+    - // @input SceneObject confetti
+    - // @input AssignableType audioManager
+    - // @input float hopHeight = 2
+    - // @input float hopDurationMs = 300
+    - // @input float squashAmount = 0.06
+    - // @input float stretchAmount = 0.08
+    - // @input float landSquashAmount = 0.08

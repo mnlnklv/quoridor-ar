@@ -1,0 +1,92 @@
+- !<AssetImportMetadata/2c19a068-6501-47a3-977f-27e5d4657d20>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 136fdf5b-b838-4e23-bc36-68631a221221
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 136fdf5b-b838-4e23-bc36-68631a221221
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 928965f2-03cc-4ecf-8e13-7ae0c35c96f4
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/928965f2-03cc-4ecf-8e13-7ae0c35c96f4>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 630403dd-eed6-4002-a33e-35aa807e7c20
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    boardSpawn: false
+    buttonClick: false
+    cancelSound: false
+    confettiPop: false
+    confirmSound: false
+    crown: false
+    error: false
+    fanfare: false
+    heavyThud1: false
+    heavyThud2: false
+    heavyThud3: false
+    jump: false
+    light1: false
+    light2: false
+    light3: false
+    rotateSound: false
+    sadTrumpet: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - heavyThud1: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      heavyThud2: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      heavyThud3: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      light1: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      light2: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      light3: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      boardSpawn: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      confettiPop: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      crown: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      jump: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      sadTrumpet: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      fanfare: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      error: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      buttonClick: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      confirmSound: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      rotateSound: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      cancelSound: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Component.AudioComponent heavyThud1
+    - // @input Component.AudioComponent heavyThud2
+    - // @input Component.AudioComponent heavyThud3
+    - // @input Component.AudioComponent light1
+    - // @input Component.AudioComponent light2
+    - // @input Component.AudioComponent light3
+    - // @input Component.AudioComponent boardSpawn
+    - // @input Component.AudioComponent confettiPop
+    - // @input Component.AudioComponent crown
+    - // @input Component.AudioComponent jump
+    - // @input Component.AudioComponent sadTrumpet
+    - // @input Component.AudioComponent fanfare
+    - // @input Component.AudioComponent error
+    - // @input Component.AudioComponent buttonClick
+    - // @input Component.AudioComponent confirmSound
+    - // @input Component.AudioComponent rotateSound
+    - // @input Component.AudioComponent cancelSound
