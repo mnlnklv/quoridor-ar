@@ -10,6 +10,9 @@ SourceAssets/SubstancePainter/*_autosave_*.spp
 # Blender autosaves
 SourceAssets/BlenderFile/blend1
 
+# Other
+SourceAssets/ImagesAndVideos/
+
 # OS junk
 .DS_Store
 Thumbs.db
