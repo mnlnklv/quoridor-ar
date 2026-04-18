@@ -7,6 +7,9 @@ LensStudio/Quoridor/Workspaces/
 SourceAssets/SubstancePainter/autosave/
 SourceAssets/SubstancePainter/*_autosave_*.spp
 
+# Blender autosaves
+SourceAssets/BlenderFile/blend1
+
 # OS junk
 .DS_Store
 Thumbs.db
