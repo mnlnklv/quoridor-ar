@@ -7,8 +7,10 @@ LensStudio/Quoridor/Workspaces/
 SourceAssets/SubstancePainter/autosave/
 SourceAssets/SubstancePainter/*_autosave_*.spp
 
-# Blender autosaves
-SourceAssets/BlenderFile/blend1
+# Blender - Files are too big to upload
+SourceAssets/BlenderFile/*.blend
+SourceAssets/BlenderFile/*.blend1
+SourceAssets/BlenderFile/assets/
 
 # Other
 SourceAssets/ImagesAndVideos/
