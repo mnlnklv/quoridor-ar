@@ -50,8 +50,10 @@ This project brings Quoridor into augmented reality on Snapchat Spectacles. The 
 **AI Opponent**
 - Minimax with alpha-beta pruning at depth 2
 - Path-aware wall placement — offensive walls target your BFS shortest path, defensive walls protect the AI's own path
+- L-shape wall connectivity bonus to build interlocking barriers rather than isolated walls
 - Early game suppression — no walls placed when distances are large and equal
 - Sprint mode when close to winning
+- Repetition penalty to prevent oscillation between positions
 
 **Animations**
 - Board pop-in on lens start
