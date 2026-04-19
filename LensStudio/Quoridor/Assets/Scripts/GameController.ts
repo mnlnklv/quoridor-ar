@@ -411,6 +411,7 @@ export class GameController extends BaseScriptComponent {
     if (this.restartButtonAnimator) this.restartButtonAnimator.hide(() => {});
 
     this.state = new BoardState();
+    AIController.resetHistory();
     this.isPlayerTurn = true;
     this.isProcessing = false;
     this.gameOver = false;

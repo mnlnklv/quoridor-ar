@@ -12,6 +12,12 @@ type Action =
 export class AIController {
 
   private static readonly SEARCH_DEPTH = 2;
+  private static positionHistory: Vec2Int[] = [];
+  private static readonly HISTORY_SIZE = 6;
+
+  static resetHistory(): void {
+    AIController.positionHistory = [];
+  }
 
   // ─── Main Decision ────────────────────────────────────────────────────────────
 
@@ -21,7 +27,6 @@ export class AIController {
 
     print("AIController: aiDist=" + aiDist + " playerDist=" + playerDist);
 
-    // Sprint if AI is very close to winning and ahead
     if (aiDist <= 1 || (aiDist <= 3 && aiDist < playerDist - 1)) {
       return AIController.bestMoveOnly(state);
     }
@@ -39,6 +44,10 @@ export class AIController {
     }
 
     if (result.action.type === "MOVE") {
+      AIController.positionHistory.push({ ...result.action.pos });
+      if (AIController.positionHistory.length > AIController.HISTORY_SIZE) {
+        AIController.positionHistory.shift();
+      }
       print("AIController: Moving to R" +
         result.action.pos.row + " C" + result.action.pos.col +
         " (score=" + result.score.toFixed(2) + ")");
@@ -53,21 +62,30 @@ export class AIController {
 
   // ─── Evaluation Function ──────────────────────────────────────────────────────
 
-  private static evaluate(state: BoardState): number {
-    const aiDist = WallValidator.getDistance(state, state.aiPos, 0);
-    const playerDist = WallValidator.getDistance(state, state.playerPos, 8);
-
-    if (aiDist === 0) return 10000;
-    if (playerDist === 0) return -10000;
-    if (aiDist >= 999) return -10000;
-    if (playerDist >= 999) return 10000;
-
-    const pathDiff = (playerDist - aiDist) * 2;
-    const wallDiff = (state.aiWallsLeft - state.playerWallsLeft) * 0.8;
-    const aiProgress = (8 - aiDist) * 0.3;
-
-    return pathDiff + wallDiff + aiProgress;
-  }
+      private static evaluate(state: BoardState): number {
+      const aiDist = WallValidator.getDistance(state, state.aiPos, 0);
+      const playerDist = WallValidator.getDistance(state, state.playerPos, 8);
+    
+      if (aiDist === 0) return 10000;
+      if (playerDist === 0) return -10000;
+      if (aiDist >= 999) return -10000;
+      if (playerDist >= 999) return 10000;
+    
+      const pathDiff = (playerDist - aiDist) * 2;
+      const wallDiff = (state.aiWallsLeft - state.playerWallsLeft) * 0.8;
+      const aiProgress = (8 - aiDist) * 0.3;
+    
+      // Penalise positions that appear in recent move history
+      let historyPenalty = 0;
+      for (const h of AIController.positionHistory) {
+        if (h.row === state.aiPos.row && h.col === state.aiPos.col) {
+          historyPenalty = 3;
+          break;
+        }
+      }
+    
+      return pathDiff + wallDiff + aiProgress - historyPenalty;
+    }
 
   // ─── Minimax with Alpha-Beta Pruning ──────────────────────────────────────────
 
@@ -133,11 +151,6 @@ export class AIController {
 
   // ─── Wall Connectivity Bonus ──────────────────────────────────────────────────
 
-  // In Quoridor's wall grid:
-  // H wall at (r, c) has corners at (r, c) and (r, c+1)
-  // V wall at (r, c) has corners at (r, c) and (r+1, c)
-  // Two walls form an L-shape when they share a corner — this forces much
-  // longer detours than isolated or parallel walls.
   private static getWallConnectivityBonus(
     state: BoardState,
     wall: WallPlacement
@@ -145,9 +158,6 @@ export class AIController {
     let bonus = 0;
 
     if (wall.axis === "H") {
-      // H wall at (r, c) shares corners with V walls at:
-      // (r, c), (r-1, c)  — left corner
-      // (r, c+1), (r-1, c+1) — right corner
       const vCandidates = [
         { row: wall.row,     col: wall.col     },
         { row: wall.row - 1, col: wall.col     },
@@ -159,16 +169,9 @@ export class AIController {
           if (state.vWalls[v.row][v.col]) bonus += 3;
         }
       }
-
-      // Penalty for parallel H walls in adjacent rows — creates thin corridor
-      // instead of a real barrier, wasting wall coverage
       if (wall.row > 0 && state.hWalls[wall.row - 1][wall.col]) bonus -= 2;
       if (wall.row < 7 && state.hWalls[wall.row + 1][wall.col]) bonus -= 2;
-
     } else {
-      // V wall at (r, c) shares corners with H walls at:
-      // (r, c), (r, c-1)     — top corner
-      // (r+1, c), (r+1, c-1) — bottom corner
       const hCandidates = [
         { row: wall.row,     col: wall.col     },
         { row: wall.row,     col: wall.col - 1 },
@@ -180,8 +183,6 @@ export class AIController {
           if (state.hWalls[h.row][h.col]) bonus += 3;
         }
       }
-
-      // Penalty for parallel V walls in adjacent cols — same reasoning
       if (wall.col > 0 && state.vWalls[wall.row][wall.col - 1]) bonus -= 2;
       if (wall.col < 7 && state.vWalls[wall.row][wall.col + 1]) bonus -= 2;
     }
@@ -205,15 +206,21 @@ export class AIController {
         const newRow = action.pos.row;
         priority = Math.abs(currentRow - targetRow) - Math.abs(newRow - targetRow);
         priority += 10;
+
+        // Penalise returning to recently visited positions
+        if (isAiTurn) {
+          for (const h of AIController.positionHistory) {
+            if (h.row === action.pos.row && h.col === action.pos.col) {
+              priority -= 15;
+              break;
+            }
+          }
+        }
       } else {
-        // Base: prefer walls near the opponent
         const opponent = isAiTurn ? state.playerPos : state.aiPos;
         const dist = Math.abs(action.wall.row - opponent.row) +
           Math.abs(action.wall.col - opponent.col);
         priority = -dist;
-
-        // Bonus/penalty for wall connectivity — applies to both offensive
-        // and defensive walls since getCandidateWalls generates both
         priority += AIController.getWallConnectivityBonus(state, action.wall);
       }
 
@@ -243,8 +250,6 @@ export class AIController {
     const wallsLeft = isAiTurn ? state.aiWallsLeft : state.playerWallsLeft;
     if (wallsLeft === 0) return actions;
 
-    // Early game suppression — only consider walls when the game is
-    // meaningfully contested
     const playerClose = playerDist <= 5;
     const aiClose = aiDist <= 5;
     const playerLeading = playerDist < aiDist - 1;
@@ -275,7 +280,6 @@ export class AIController {
       const b = path[i + 1];
 
       if (a.col === b.col) {
-        // Vertical move — H walls block it
         const minRow = Math.min(a.row, b.row);
         const col = a.col;
         if (col >= 0 && col <= 7) {
@@ -285,7 +289,6 @@ export class AIController {
           walls.push({ row: minRow, col: col - 1, axis: "H" });
         }
       } else if (a.row === b.row) {
-        // Horizontal move — V walls block it
         const minCol = Math.min(a.col, b.col);
         const row = a.row;
         if (row >= 0 && row <= 7) {
@@ -312,13 +315,11 @@ export class AIController {
       }
     };
 
-    // Offensive: walls that block the player's shortest path to row 8
     const playerPath = WallValidator.getShortestPath(state, state.playerPos, 8);
     for (const w of AIController.getWallsBlockingPath(playerPath)) {
       addWall(w);
     }
 
-    // Defensive: walls that protect the AI's shortest path to row 0
     const aiPath = WallValidator.getShortestPath(state, state.aiPos, 0);
     for (const w of AIController.getWallsBlockingPath(aiPath)) {
       addWall(w);
@@ -363,10 +364,19 @@ export class AIController {
     let bestMoves: Vec2Int[] = [];
 
     for (const move of validMoves) {
+      // Apply history penalty in sprint mode too
+      let historyPenalty = 0;
+      for (const h of AIController.positionHistory) {
+        if (h.row === move.row && h.col === move.col) {
+          historyPenalty = 8;
+          break;
+        }
+      }
+
       const sim = state.clone();
       sim.applyMove(move, "AI");
       const dist = WallValidator.getDistance(sim, sim.aiPos, 0);
-      const score = -dist;
+      const score = -dist - historyPenalty;
 
       if (score > bestScore) {
         bestScore = score;
@@ -377,6 +387,10 @@ export class AIController {
     }
 
     const chosen = bestMoves[Math.floor(Math.random() * bestMoves.length)];
+    AIController.positionHistory.push({ ...chosen });
+    if (AIController.positionHistory.length > AIController.HISTORY_SIZE) {
+      AIController.positionHistory.shift();
+    }
     print("AIController: Sprint move to R" + chosen.row + " C" + chosen.col);
     return { type: "MOVE", pos: chosen };
   }

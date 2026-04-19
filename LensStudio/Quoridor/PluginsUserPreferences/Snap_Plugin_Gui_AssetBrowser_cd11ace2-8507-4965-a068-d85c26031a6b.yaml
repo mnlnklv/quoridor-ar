@@ -1,7 +1,7 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 1158
+    size: 1157
     values:
       - ""
       - Audio
@@ -368,7 +368,6 @@ CollapsedEntities:
       - Render Target.renderTarget
       - RestartButton.mat
       - Scene.scene
-      - Scripts
       - Scripts/AIController.ts
       - Scripts/AIThinkingIndicator.ts
       - Scripts/AudioManager.ts

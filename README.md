@@ -148,6 +148,10 @@ Wall candidates are only added to the action set when at least one of these is t
 
 When `aiDist <= 1`, or `aiDist <= 3` and the AI leads by more than 1 move, minimax is skipped entirely. The AI picks whichever legal move minimally reduces its BFS distance to row 0, with random tiebreaking between equal options.
 
+### Repetition Penalty
+
+The AI tracks its last 6 positions in a history buffer. Positions that appear in this history receive a penalty both in the evaluation function and in the heuristic sort, preventing the AI from oscillating between two squares when minimax scores them equally. The history is cleared on each game reset.
+
 ## Built With
 
 | Tool | Purpose |
